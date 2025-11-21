@@ -71,26 +71,26 @@ int min(node* root) {
     return root->data;
 }
 
-// Helper: leftmost node
+// leftmost node
 node* leftmost(node* n) {
     while (n && n->left) n = n->left;
     return n;
 }
 
-// Helper: rightmost node
+//rightmost node
 node* rightmost(node* n) {
     while (n && n->right) n = n->right;
     return n;
 }
 
-// (d) In-order successor of a given node
+// (d) In-order successor 
 node* inOrderSuccessor(node* root, node* p) {
     if (!root || !p) return nullptr;
 
-    // Case 1: p has right child → leftmost of right subtree
+    // Case 1:
     if (p->right) return leftmost(p->right);
 
-    // Case 2: No right child → go up from root to find lowest ancestor
+    // Case 2:
     node* succ = nullptr;
     node* curr = root;
 
@@ -131,7 +131,7 @@ node* inorderPredecessor(node* root, node* p) {
     return pred;
 }
 
-// Main function with menu
+
 int main() {
     node* root = nullptr;
     int choice, key;
@@ -209,4 +209,5 @@ int main() {
     }
 
     return 0;
+
 }
